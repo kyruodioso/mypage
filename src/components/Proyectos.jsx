@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import IconButton from '@material-ui/core/IconButton';
-import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
+import VisibilityTwoToneIcon from '@material-ui/icons/VisibilityTwoTone';
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
 
@@ -46,7 +43,14 @@ const useStyles = makeStyles((theme) => ({
       color:'white',
     },
     icon:{
-      color:'#1eaa1e'
+      color:'white'
+    },
+    image:{
+        opacity:'0.7'
+    },
+    link:{
+        textDecoration: 'inherit',
+        color:'#1eaa1e'
     }
 
   }));
@@ -59,9 +63,12 @@ const Post = () => {
 
     useEffect(() => {
         sanityClient
-            .fetch(`*[_type == "post"]{
+            .fetch(`*[_type == "proyectos"]{
             title,
-            slug,
+            date,
+            link,
+            description,
+            projectType,
             mainImage{
                 asset->{
                     _id,
@@ -76,35 +83,28 @@ const Post = () => {
 
     return (
       <div className={classes.root}>
-        <Typography className ={classes.title} variant="h3">My Blog!</Typography>
+        <Typography className ={classes.title} variant="h3">My Projects!</Typography>
         <Container className={classes.container}>
       <GridList cellHeight={180}  cols={3}>
-        <GridListTile
-         key="Subheader"
-         cols={2}
-         className={classes.subheader}
-         style={{ height: 'auto' }}
-         >
-        <ListSubheader component="div" className={classes.listSubheader}>
-        <Typography variant="h6" className={classes.Typographyh6}>This is my space for reflection and ... coffee</Typography>
-        </ListSubheader>
-        </GridListTile>
-                    {postData && postData.map((post, index) => (
+  
+                    {postData && postData.map((proyecto, index) => (
             
-                            <GridListTile key={post.img} cols={post.cols || 1} className={classes.gridListTile}>
+                            <GridListTile key={proyecto.img} cols={proyecto.cols || 1} className={classes.gridListTile}>
 
-            <img src={post.mainImage.asset.url} alt={post.mainImage.alt} />
-                <Link to={"/post/" + post.slug.current} key={post.slug.current}>
+            <img src={proyecto.mainImage.asset.url} alt={proyecto.mainImage.alt} className={classes.image}/>
+            <div className="card-header text-white"><strong>Finished on</strong>:{" "}
+                  {new Date(proyecto.date).toLocaleDateString()}</div>
 
              <GridListTileBar
-             title={post.title}
-             actionIcon={
-                    <IconButton>
-                    <PlayCircleOutlineIcon fontSize='large' className={classes.icon} />
-                    </IconButton>
-             } />
-                         </Link>
-
+             title={<a href={proyecto.link} className={classes.link}>{proyecto.title}</a>}
+             subtitle={<span><strong>Type</strong>:{" "}{proyecto.projectType}</span>}
+         
+                  actionIcon={
+                <a href={proyecto.link} rel="noopener noreferrer" target="_blank" className={classes.icon}>
+                  <VisibilityTwoToneIcon fontSize='large'/>
+                </a>
+              }
+              />
           </GridListTile>
         ))}
       </GridList>
