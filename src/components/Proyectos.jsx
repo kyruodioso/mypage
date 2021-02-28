@@ -7,14 +7,13 @@ import VisibilityTwoToneIcon from '@material-ui/icons/VisibilityTwoTone';
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
 
-import Background from '../img/rafael-guajardo.jpg'
 
 
 import sanityClient from '../client';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      backgroundImage: `url(${Background})`,
+      backgroundImage: `url('images/rafael-guajardo.jpg')`,
       width: '100%',
       height: '100%',
       backgroundSize: 'cover',

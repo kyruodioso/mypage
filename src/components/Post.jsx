@@ -10,14 +10,14 @@ import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
 
-import Background from '../img/rafael-guajardo.jpg'
 
 
 import sanityClient from '../client';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      backgroundImage: `url(${Background})`,
+      backgroundImage: `url('images/rafael-guajardo.jpg')`,
+      position:'fixed',
       width: '100%',
       height: '100%',
       backgroundSize: 'cover',
@@ -34,13 +34,17 @@ const useStyles = makeStyles((theme) => ({
       boxShadow:'5px 5px 15px 0px rgba(0,0,0,0.55)'
     },
     subheader:{
-      backgroundColor:'rgba(0,0,0,0.55)',
+      backdropFilter: 'blur(5px)',
+      backgroundColor: 'rgba(86,93,87, 0.075)',
+      boxShadow: 'rgba(0, 0, 0, 0.3) 2px 8px 8px',
+      borderBottom: '2px rgba(40,40,40,0.35) solid',
+      borderRight: '2px rgba(40,40,40,0.35) solid',
       display:'flex',
       alignItems: 'center',
       justifyContent:'center'
     },
     listSubheader:{
-      marginTop: 10
+      marginTop: 10,
     },
     Typographyh6:{
       color:'white',
