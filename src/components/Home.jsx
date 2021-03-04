@@ -3,6 +3,7 @@ import {makeStyles} from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper';
 import Typewriter from 'typewriter-effect';
 import Fade from 'react-reveal/Fade';
+import Flip from 'react-reveal/Flip'
 
 
 
@@ -31,6 +32,7 @@ const useStyles = makeStyles((theme)=>({
     justifyContent: 'center',
     alignItems:'center',
     display:'flex',
+    marginBottom: '4em'
     
   },
   textWriter:{
@@ -39,18 +41,23 @@ const useStyles = makeStyles((theme)=>({
   image:{
     borderRadius:"100px",
     maxWidth:"10em",
-   marginBottom:'2em',
+   marginBottom:'4em',
    boxShadow:'5px 5px 15px 0px rgba(0,0,0,0.55)',
    marginTop:'4.5em'
   },
-  imagenPrueba:{
+  stack: {
+   textAlign:'center'
+  },
+  flip:{
+    marginBottom:'4em',
+  },
+   imagenPrueba:{
     borderRadius:"100px",
-    maxWidth:"10em",
+    width:"15em",
+    maxHeight:"20em",
    boxShadow:'5px 5px 15px 0px rgba(0,0,0,0.55)',
-   marginTop:'4.5em',
-  marginBottom:'4em'
-  }
-
+   margin:'0.2em'
+   },
 
 }));
 
@@ -59,7 +66,10 @@ const Home = () => {
 
 const classes=useStyles();
 const imagePerfil='images/perfil.jpg'
-const imagenPrueba='images/prueba.jpg'
+const imagenMongo='images/mongodb.png'
+const imagenNode='images/node.png'
+const imagenReact= 'images/react.png'
+const imagenExpress='images/express.png'
 
   
     return (
@@ -81,8 +91,15 @@ const imagenPrueba='images/prueba.jpg'
 </Paper>
 </Fade>
            </main>
-           <img className={classes.imagenPrueba} src={imagenPrueba} alt="imagen de prueba" />
+           <div className="stack">
+           <Flip left cascade duration={3500} className={classes.flip}>
+             <img className={classes.imagenPrueba} src={imagenMongo} alt="imagen de prueba" />
+             <img className={classes.imagenPrueba} src={imagenExpress} alt="imagen de prueba" />
+             <img className={classes.imagenPrueba} src={imagenReact} alt="imagen de prueba" />
+             <img className={classes.imagenPrueba} src={imagenNode} alt="imagen de prueba" />
 
+           </Flip>
+           </div>
            </div>
         </div>
     )

@@ -14,17 +14,20 @@ import sanityClient from '../client';
 const useStyles = makeStyles((theme) => ({
     root: {
       backgroundImage: `url('images/rafael-guajardo.jpg')`,
-      width: '100%',
-      height: '100%',
+      backgroundPosition: 'center center',
+      backgroundRepeat: 'no-repeat',
+      backgroundAttachment: 'fixed',
       backgroundSize: 'cover',
-      textAlign:'center',
-      paddingTop:'5em'
+      backgroundColor: '#66999',
+      minHeight:'100vh',
     },
     title:{
-      color:"#fff"
+      color:"#fff",
+      marginBottom:"1em"
     },
     container:{
-      paddingTop:'3em',
+      textAlign:'center',
+      paddingTop:'5em',
     },
     gridListTile: {
       boxShadow:'5px 5px 15px 0px rgba(0,0,0,0.55)'
@@ -82,8 +85,9 @@ const Post = () => {
 
     return (
       <div className={classes.root}>
-        <Typography className ={classes.title} variant="h3">My Projects!</Typography>
         <Container className={classes.container}>
+        <Typography className ={classes.title} variant="h3">My Projects!</Typography>
+
       <GridList cellHeight={180}  cols={3}>
   
                     {postData && postData.map((proyecto, index) => (

@@ -16,19 +16,21 @@ import sanityClient from '../client';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      backgroundImage: `url('images/rafael-guajardo.jpg')`,
-      position:'fixed',
-      width: '100%',
-      height: '100%',
-      backgroundSize: 'cover',
-      textAlign:'center',
-      paddingTop:'5em'
+    backgroundImage: `url('images/rafael-guajardo.jpg')`,
+    backgroundPosition: 'center center',
+    backgroundRepeat: 'no-repeat',
+    backgroundAttachment: 'fixed',
+    backgroundSize: 'cover',
+    backgroundColor: '#66999',
+    minHeight:'100vh',
     },
     title:{
+      marginBottom:"1em",
       color:"#fff"
     },
     container:{
-      paddingTop:'3em',
+      paddingTop:'5em',
+      textAlign:'center',
     },
     gridListTile: {
       boxShadow:'5px 5px 15px 0px rgba(0,0,0,0.55)'
@@ -80,8 +82,9 @@ const Post = () => {
 
     return (
       <div className={classes.root}>
-        <Typography className ={classes.title} variant="h3">My Blog!</Typography>
         <Container className={classes.container}>
+        <Typography className ={classes.title} variant="h3">My Blog!</Typography>
+
       <GridList cellHeight={180}  cols={3}>
         <GridListTile
          key="Subheader"
