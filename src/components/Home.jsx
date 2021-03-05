@@ -13,13 +13,15 @@ const useStyles = makeStyles((theme)=>({
     textAlign:'center',
   },
   container:{
-    backgroundImage: `url('images/rafael-guajardo.jpg')`,
+    backgroundImage: `url('images/background01.jpg')`,
     backgroundPosition: 'center center',
     backgroundRepeat: 'no-repeat',
     backgroundAttachment: 'fixed',
     backgroundSize: 'cover',
     backgroundColor: '#66999',
     minHeight:'100vh',
+    paddingBottom:'4.5em',
+    paddingTop:'4.5em'
   },
   paper: {
     backgroundColor: 'rgba(0, 0, 0, 0.796)',
@@ -46,14 +48,15 @@ const useStyles = makeStyles((theme)=>({
    marginTop:'4.5em'
   },
   stack: {
-   textAlign:'center'
+   textAlign:'center',
+
   },
   flip:{
-    marginBottom:'4em',
+    
   },
    imagenPrueba:{
     borderRadius:"100px",
-    width:"15em",
+    maxWidth:"20%",
     maxHeight:"20em",
    boxShadow:'5px 5px 15px 0px rgba(0,0,0,0.55)',
    margin:'0.2em'

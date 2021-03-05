@@ -13,13 +13,15 @@ import sanityClient from '../client';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      backgroundImage: `url('images/rafael-guajardo.jpg')`,
+      backgroundImage: `url('images/background01.jpg')`,
       backgroundPosition: 'center center',
       backgroundRepeat: 'no-repeat',
       backgroundAttachment: 'fixed',
       backgroundSize: 'cover',
       backgroundColor: '#66999',
       minHeight:'100vh',
+      paddingBottom:'4.5em',
+      paddingTop:'4.5em',
     },
     title:{
       color:"#fff",
