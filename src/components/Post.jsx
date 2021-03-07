@@ -16,6 +16,13 @@ import sanityClient from '../client';
 
 const useStyles = makeStyles((theme) => ({
     root: {
+     textAlign:'center'
+    },
+    title:{
+      marginBottom:"1em",
+      color:"#fff"
+    },
+    container:{
       backgroundImage: `url('images/background01.jpg')`,
       backgroundPosition: 'center center',
       backgroundRepeat: 'no-repeat',
@@ -25,14 +32,6 @@ const useStyles = makeStyles((theme) => ({
       minHeight:'100vh',
       paddingBottom:'4.5em',
       paddingTop:'4.5em'
-    },
-    title:{
-      marginBottom:"1em",
-      color:"#fff"
-    },
-    container:{
-      paddingTop:'5em',
-      textAlign:'center',
     },
     gridListTile: {
       boxShadow:'5px 5px 15px 0px rgba(0,0,0,0.55)'
@@ -84,7 +83,8 @@ const Post = () => {
 
     return (
       <div className={classes.root}>
-        <Container className={classes.container}>
+        <div  className={classes.container}>
+        <Container>
         <Typography className ={classes.title} variant="h3">My Blog!</Typography>
 
       <GridList cellHeight={180}  cols={3}>
@@ -118,6 +118,7 @@ const Post = () => {
         ))}
       </GridList>
       </Container>
+      </div>
       </div>
   );
 }

@@ -17,7 +17,8 @@ const useStyles = makeStyles((theme) => ({
 root: {
   minHeight:'100vh',
 background:'black',
-}
+},
+
 }))
 
 
@@ -27,7 +28,7 @@ function App() {
 
   return (
     <BrowserRouter>
-    <NavBar />
+    <NavBar className={classes.navBar}/>
     <Paper className={classes.root}>
     <Switch>
     <Route component={Home} path='/' exact />
