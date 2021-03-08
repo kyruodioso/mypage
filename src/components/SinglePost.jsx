@@ -1,17 +1,61 @@
 import React, { useState, useEffect }from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import {useParams} from 'react-router-dom';
 import sanityClient from '../client';
 import imageUrlBuilder from '@sanity/image-url';
 import BlockContent from '@sanity/block-content-to-react'
+import Container from '@material-ui/core/Container'
+
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source){
     return builder.image(source)
 }
 
+const useStyles = makeStyles((theme)=>({
+    root: {
+      textAlign:'center'
+      },
+      title:{
+        color:"#fff",
+        marginBottom:"1em"
+      },
+      container:{
+        background: `#ffff`,
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
+        backgroundSize: 'cover',
+        backgroundColor: '#66999',
+        minHeight:'100vh',
+        paddingBottom:'4.5em',
+        paddingTop:'4.5em'
+      },
+      header:{
+        position:'relative',
+        textAlign:'center'
+      },
+      subheader:{
+          position:'absolute',
+          top:'10px',
+          left:'0',
+          right:'0'
+      },
+      singlePostImage:{
+          position:'relative',
+          width:'100%',
+      },
+      authorImage:{
+          borderRadius:'100%'
+      },
+
+    }));
+
 const SinglePost = () => {
     const [singlePost, setSinglePost]= useState(null);
     const {slug} = useParams();
+    const classes=useStyles();
+
 
     useEffect(() => {
 sanityClient.fetch(`*[slug.current == "${slug}"]{
@@ -38,27 +82,24 @@ sanityClient.fetch(`*[slug.current == "${slug}"]{
   </div>;
 
     return (
-        <div className="container">
-<div class="jumbotron p-4 p-md-5 text-white bg-secondary">
-    <div class="col-md-6 px-0">
-      <h1 class="display-4 font-italic text-center">{singlePost.title}</h1>
+        <div className={classes.root}>
+        <div className={classes.container}>
+            <Container>
+                <div className={classes.header}>
+                <img src={singlePost.mainImage.asset.url} alt={singlePost.title} className={classes.singlePostImage}/>
+                    <div className={classes.subheader}>
+      <h1 className={classes.title}>{singlePost.title}</h1>
+    <img src={urlFor(singlePost.authorImage).width(100).url()} alt={singlePost.name} className={classes.authorImage}/>
+    <p><strong>by: </strong>{singlePost.name}</p>
     </div>
-    <div className="row">
-        <div className="col">
-    <img src={urlFor(singlePost.authorImage).width(100).url()} alt={singlePost.name} className="singlePostImage"/>
-    </div>
-    <div className="col">
-    <p>{singlePost.name}</p>
-    </div>
-    </div>
-  </div>
-  <div className="blog-post">
-  <BlockContent className="text-center" blocks={singlePost.body} projectId="lp91xjme" dataset="production"/>
-            <img src={singlePost.mainImage.asset.url} alt={singlePost.title} className="img-fluid"/>
-  </div>
+            </div>
 
+            <BlockContent className="text-center" blocks={singlePost.body} projectId="lp91xjme" dataset="production"/>
+
+
+  </Container>
 </div>
-
+</div>
 
 
     )

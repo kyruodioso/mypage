@@ -6,6 +6,8 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
+import Paper from '@material-ui/core/Paper';
+
 
 
 
@@ -47,12 +49,25 @@ const useStyles = makeStyles((theme)=>({
         justifyContent:'center',
         alignItems: 'center',
       },
-      perfilImage:{
+      paper:{
         height:300,
         flexShrink: 3,
+        backdropFilter: 'blur(5px)',
+        backgroundColor: 'rgba(86,93,87, 0.075)',
+        boxShadow: 'rgba(0, 0, 0, 0.3) 2px 8px 8px',
+        borderBottom: '2px rgba(40,40,40,0.35) solid',
+        borderRight: '2px rgba(40,40,40,0.35) solid',
+      },
+      perfilImage:{
+        maxHeight:300,
+        borderRadius: '100%'
       },
       button:{
         button:0
+      },
+      imagenPerro:{
+        margin:'1em',
+        width:'75%',
       }
 }))
 
@@ -68,13 +83,13 @@ const About = () => {
         <Card className={classes.card} elevation={3}>
       <CardContent className={classes.cardContent}>
         <Typography className={classes.titleCard} color="textSecondary" gutterBottom>
-          Word of the Day
+          "Time is the most valuable"
         </Typography>
         <Typography variant="h5" component="h2">
-          This is my presentation
+          Hi! Im Cristian 😃
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          adjective
+         My English could be better, I know...
         </Typography>
         <Typography variant="body2" component="p">
         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
@@ -86,7 +101,12 @@ const About = () => {
         <Button size="small">Learn More</Button>
       </CardActions>
     </Card>
+    <Paper className={classes.paper} elevation={3}>
     <img src="images/perfilAbout.jpg" alt="imagen de perfil" className={classes.perfilImage}/>
+    </Paper>
+    </div>
+    <div>
+      <img src="images/KyruCoffee.jpg" alt="imagen con perro" className={classes.imagenPerro}/>
     </div>
              </Container>
              </div>

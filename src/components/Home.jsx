@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme)=>({
     textAlign:'center',
   },
   container:{
-    backgroundImage: `url('images/background01.jpg')`,
+    backgroundImage: `url('images/dark-background.jpg')`,
     backgroundPosition: 'center center',
     backgroundRepeat: 'no-repeat',
     backgroundAttachment: 'fixed',
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme)=>({
     backgroundColor: '#66999',
     minHeight:'100vh',
     paddingBottom:'4.5em',
-    paddingTop:'4.5em'
+    paddingTop:'4em'
   },
   paper: {
     backgroundColor: 'rgba(0, 0, 0, 0.796)',
@@ -43,18 +43,14 @@ const useStyles = makeStyles((theme)=>({
   image:{
     borderRadius:"100px",
     maxWidth:"10em",
-   marginBottom:'4em',
+   marginBottom:'3em',
    boxShadow:'5px 5px 15px 0px rgba(0,0,0,0.55)',
-   marginTop:'4.5em'
+   marginTop:'1em'
   },
   stack: {
    textAlign:'center',
-
   },
-  flip:{
-    
-  },
-   imagenPrueba:{
+   imagenMern:{
     borderRadius:"100px",
     maxWidth:"20%",
     maxHeight:"20em",
@@ -96,10 +92,10 @@ const imagenExpress='images/express.png'
            </main>
            <div className="stack">
            <Flip left cascade duration={3500} className={classes.flip}>
-             <img className={classes.imagenPrueba} src={imagenMongo} alt="imagen de prueba" />
-             <img className={classes.imagenPrueba} src={imagenExpress} alt="imagen de prueba" />
-             <img className={classes.imagenPrueba} src={imagenReact} alt="imagen de prueba" />
-             <img className={classes.imagenPrueba} src={imagenNode} alt="imagen de prueba" />
+             <img className={classes.imagenMern} src={imagenMongo} alt="imagen de prueba" />
+             <img className={classes.imagenMern} src={imagenExpress} alt="imagen de prueba" />
+             <img className={classes.imagenMern} src={imagenReact} alt="imagen de prueba" />
+             <img className={classes.imagenMern} src={imagenNode} alt="imagen de prueba" />
 
            </Flip>
            </div>
