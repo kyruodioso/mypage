@@ -5,6 +5,8 @@ import sanityClient from '../client';
 import imageUrlBuilder from '@sanity/image-url';
 import BlockContent from '@sanity/block-content-to-react'
 import Container from '@material-ui/core/Container'
+import Typography from '@material-ui/core/Typography'
+
 
 
 const builder = imageUrlBuilder(sanityClient);
@@ -33,7 +35,9 @@ const useStyles = makeStyles((theme)=>({
       },
       header:{
         position:'relative',
-        textAlign:'center'
+        textAlign:'center',
+        overflow:'hidden',
+        height: 300
       },
       subheader:{
           position:'absolute',
@@ -88,9 +92,9 @@ sanityClient.fetch(`*[slug.current == "${slug}"]{
                 <div className={classes.header}>
                 <img src={singlePost.mainImage.asset.url} alt={singlePost.title} className={classes.singlePostImage}/>
                     <div className={classes.subheader}>
-      <h1 className={classes.title}>{singlePost.title}</h1>
     <img src={urlFor(singlePost.authorImage).width(100).url()} alt={singlePost.name} className={classes.authorImage}/>
     <p><strong>by: </strong>{singlePost.name}</p>
+    <Typography variant="h1" className={classes.title}>{singlePost.title}</Typography>
     </div>
             </div>
 
