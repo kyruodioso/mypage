@@ -1,6 +1,5 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import {NavLink} from 'react-router-dom'
 import BottomNavigation from '@material-ui/core/Button';
 import Button from '@material-ui/core/Button';
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -51,10 +50,10 @@ const Footer = () => {
         showLabels
         className={classes.root}
       >
-        <NavLink className={classes.navLink}to={'/'}><Button className={classes.button} variant="outlined"><LinkedInIcon /></Button></NavLink>
-        <NavLink className={classes.navLink}to={'/'}><Button className={classes.button} variant="outlined"><GitHubIcon /></Button></NavLink>
-        <NavLink className={classes.navLink}to={'/'}><Button className={classes.button} variant="outlined"><WhatsAppIcon /></Button></NavLink>
-        <NavLink className={classes.navLink}to={'/'}><Button className={classes.button} variant="outlined"><EmailIcon /></Button></NavLink>          
+        <a className={classes.navLink} href={'https://www.linkedin.com/in/cristian-bejarano-464299149/'}><Button className={classes.button} variant="outlined"><LinkedInIcon /></Button></a>
+        <a className={classes.navLink}href={'https://github.com/kyruodioso'}><Button className={classes.button} variant="outlined"><GitHubIcon /></Button></a>
+        <a className={classes.navLink}href={'https://api.whatsapp.com/send?phone=+54 1169422060'}><Button className={classes.button} variant="outlined"><WhatsAppIcon /></Button></a>
+        <a className={classes.navLink}href={'mailto:cristianbejaranodev@gmail.com'}><Button className={classes.button} variant="outlined"><EmailIcon /></Button></a>          
       </BottomNavigation>
     );
 }
