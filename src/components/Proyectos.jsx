@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
 
   }));
 
-const Post = () => {
+const Proyect = () => {
     const [postData, setPost] = useState(null);
     const classes = useStyles();
  
@@ -119,4 +119,4 @@ const Post = () => {
   );
 }
 
-export default Post
+export default Proyect

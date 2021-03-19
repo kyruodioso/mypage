@@ -83,6 +83,7 @@ sanityClient.fetch(`*[slug.current == "${slug}"]{
         }
     },
     body,
+    image,
     "name": author->name,
     "authorImage": author->image
 }`).then((date)=> setSinglePost(date[0]))
@@ -109,7 +110,7 @@ sanityClient.fetch(`*[slug.current == "${slug}"]{
             </div>
 
           <Typography variant="h3" className={classes.title}>{singlePost.title}</Typography>
-            <BlockContent className={classes.blockContent} blocks={singlePost.body} projectId="lp91xjme" dataset="production"/>
+            <BlockContent className={classes.blockContent} blocks={singlePost.body} projectId="lp91xjme" dataset="production" imageOptions={{w: 320, h: 240, fit: 'max'}} />
             </Paper>
 
   </Container>
