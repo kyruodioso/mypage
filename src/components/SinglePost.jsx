@@ -43,10 +43,15 @@ const useStyles = makeStyles((theme)=>({
         marginBottom:2
       },
       subheader:{
+        backgroundColor:'rgba(12, 12, 12, 0.659)',
           position:'absolute',
           top:'10px',
           left:'0',
-          right:'0'
+          right:'0',
+          color:'#fff',
+          marginLeft:'35%',
+          marginRight:'35%',
+          padding:'1em'
       },
       singlePostImage:{
           position:'relative',
