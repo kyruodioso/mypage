@@ -138,7 +138,7 @@ sanityClient.fetch(`*[slug.current == "${slug}"]{
             </div>
 
           <Typography variant="h3" className={classes.title}>{singlePost.title}</Typography>
-            <BlockContent className={classes.blockContent} blocks={singlePost.body} projectId={sanityClient.clientConfig.projectId} dataset={sanityClient.clientConfig.dataset} imageOptions={{w: 250, fit: 'max', fm:'png'}} serializers={serializers}/>
+            <BlockContent className={classes.blockContent} blocks={singlePost.body} projectId={sanityClient.clientConfig.projectId} dataset={sanityClient.clientConfig.dataset} imageOptions={{w: 250, fit: 'max', fm:'webp'}} serializers={serializers}/>
 
             </Paper>
 
