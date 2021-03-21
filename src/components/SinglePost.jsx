@@ -11,6 +11,7 @@ import Paper from '@material-ui/core/Paper';
 
 
 
+
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source){
     return builder.image(source)
@@ -50,6 +51,7 @@ const useStyles = makeStyles((theme)=>({
       singlePostImage:{
           position:'relative',
           width:'100%',
+          backgroundColor: '#070809'
       },
       authorImage:{
           borderRadius:'100%'
@@ -83,10 +85,9 @@ sanityClient.fetch(`*[slug.current == "${slug}"]{
         }
     },
     body,
-    image,
     "name": author->name,
     "authorImage": author->image
-}`).then((date)=> setSinglePost(date[0]))
+}`,{slug}).then((date)=> setSinglePost(date[0]))
 .catch(console.error);
     },[slug]);
 
@@ -102,7 +103,9 @@ sanityClient.fetch(`*[slug.current == "${slug}"]{
             <Container>
             <Paper className={classes.paper}>
                 <div className={classes.header}>
-                <img src={singlePost.mainImage.asset.url} alt={singlePost.title} className={classes.singlePostImage}/>
+                  
+                <img src={urlFor(singlePost.mainImage).url()} alt={singlePost.title} className={classes.singlePostImage}/>
+                
                     <div className={classes.subheader}>
     <img src={urlFor(singlePost.authorImage).width(100).url()} alt={singlePost.name} className={classes.authorImage}/>
     <p><strong>by: </strong>{singlePost.name}</p>
@@ -110,7 +113,8 @@ sanityClient.fetch(`*[slug.current == "${slug}"]{
             </div>
 
           <Typography variant="h3" className={classes.title}>{singlePost.title}</Typography>
-            <BlockContent className={classes.blockContent} blocks={singlePost.body} projectId="lp91xjme" dataset="production" imageOptions={{w: 320, h: 240, fit: 'max'}} />
+            <BlockContent className={classes.blockContent} blocks={singlePost.body} projectId={sanityClient.clientConfig.projectId} dataset={sanityClient.clientConfig.dataset} imageOptions={{w: 320, h: 240, fit: 'max'}} />
+
             </Paper>
 
   </Container>
