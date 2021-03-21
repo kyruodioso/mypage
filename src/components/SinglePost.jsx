@@ -63,10 +63,13 @@ const useStyles = makeStyles((theme)=>({
       },
       blockContent:{
         wordWrap: 'break-word',
-        padding:2
+        padding:'1em',
+        justifyContent: 'center',
+        left:0,
+        right:0
       },
       paper:{
-        textAlign:'center',
+   
         bottom:0
       }
 
@@ -118,7 +121,7 @@ sanityClient.fetch(`*[slug.current == "${slug}"]{
             </div>
 
           <Typography variant="h3" className={classes.title}>{singlePost.title}</Typography>
-            <BlockContent className={classes.blockContent} blocks={singlePost.body} projectId={sanityClient.clientConfig.projectId} dataset={sanityClient.clientConfig.dataset} imageOptions={{w: 320, h: 240, fit: 'max'}} />
+            <BlockContent className={classes.blockContent} blocks={singlePost.body} projectId={sanityClient.clientConfig.projectId} dataset={sanityClient.clientConfig.dataset} imageOptions={{w: 250, fit: 'max'}} />
 
             </Paper>
 
