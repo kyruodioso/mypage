@@ -7,6 +7,9 @@ import BlockContent from '@sanity/block-content-to-react'
 import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography'
 import Paper from '@material-ui/core/Paper';
+import SyntaxHighlighter from 'react-syntax-highlighter'
+import {irBlack} from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
 
 
 
@@ -25,7 +28,7 @@ const useStyles = makeStyles((theme)=>({
         marginBottom:"1em",
       },
       container:{
-        backgroundImage: `linear-gradient(to top, #0a5e92, #006692, #006e91, #16758e, #2c7c8b, #338893, #3c939b, #459fa3, #41b3b9, #39c8d0, #2bdde7, #00f3ff)`,
+        backgroundImage: `linear-gradient(to right top, #120f11, #181317, #1b161e, #1d1a25, #1d1e2d, #1a2131, #152535, #0e2838, #072a37, #032d35, #042e32, #0a302e)`,
         backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'fixed',
@@ -62,6 +65,7 @@ const useStyles = makeStyles((theme)=>({
           borderRadius:'100%'
       },
       blockContent:{
+        margin:0,
         wordWrap: 'break-word',
         padding:'1em',
         justifyContent: 'center',
@@ -69,8 +73,12 @@ const useStyles = makeStyles((theme)=>({
         right:0
       },
       paper:{
-   
+        backgroundColor:'#f2f1f1',
         bottom:0
+      },
+      code:{
+backgroundColor:'#1f1f1f',
+color:'#FFFFFF'
       }
 
     }));
@@ -79,6 +87,15 @@ const SinglePost = () => {
     const [singlePost, setSinglePost]= useState(null);
     const {slug} = useParams();
     const classes=useStyles();
+    const serializers = {
+      types: {
+        code: props => (
+           <SyntaxHighlighter language={props.node.language} style={irBlack}>
+           {props.node.code}
+         </SyntaxHighlighter>
+        )
+      }
+    }
 
 
     useEffect(() => {
@@ -121,7 +138,7 @@ sanityClient.fetch(`*[slug.current == "${slug}"]{
             </div>
 
           <Typography variant="h3" className={classes.title}>{singlePost.title}</Typography>
-            <BlockContent className={classes.blockContent} blocks={singlePost.body} projectId={sanityClient.clientConfig.projectId} dataset={sanityClient.clientConfig.dataset} imageOptions={{w: 250, fit: 'max'}} />
+            <BlockContent className={classes.blockContent} blocks={singlePost.body} projectId={sanityClient.clientConfig.projectId} dataset={sanityClient.clientConfig.dataset} imageOptions={{w: 250, fit: 'max', fm:'png'}} serializers={serializers}/>
 
             </Paper>
 

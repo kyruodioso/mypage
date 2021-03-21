@@ -54,13 +54,19 @@ export default {
         ],
       },
     },
+    {
+type: 'code',
+title: 'code example'
+
+    },
     // You can add additional types here. Note that you can't use
     // primitive types such as 'string' and 'number' in the same array
     // as a block type.
     {
       name:'image',
       type: 'image',
-      options: {hotspot: true},
+      options: {hotspot: true,
+       isHighlighted: true},
     },
   ],
 }
