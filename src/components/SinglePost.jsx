@@ -52,9 +52,11 @@ const useStyles = makeStyles((theme)=>({
           left:'0',
           right:'0',
           color:'#fff',
-          marginLeft:'35%',
-          marginRight:'35%',
-          padding:'1em'
+          marginLeft:'30%',
+          marginRight:'30%',
+          padding:'1em',
+          justifyContent: 'center',
+          textAlign:'center'
       },
       singlePostImage:{
           position:'relative',
@@ -62,7 +64,8 @@ const useStyles = makeStyles((theme)=>({
           backgroundColor: '#070809'
       },
       authorImage:{
-          borderRadius:'100%'
+          borderRadius:'100%',
+          justifyContent: 'center'
       },
       blockContent:{
         margin:0,
