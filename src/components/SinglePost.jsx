@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme)=>({
         marginBottom:"1em",
       },
       container:{
-        backgroundImage: `linear-gradient(to right top, #120f11, #181317, #1b161e, #1d1a25, #1d1e2d, #1a2131, #152535, #0e2838, #072a37, #032d35, #042e32, #0a302e)`,
+
         backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'fixed',
@@ -77,6 +77,7 @@ const useStyles = makeStyles((theme)=>({
       },
       paper:{
         backgroundColor:'#f2f1f1',
+        width:'100%',
         bottom:0
       },
       code:{

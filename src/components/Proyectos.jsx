@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
       textAlign:'center',
     },
     container:{
-      backgroundImage: `url('images/background01.jpg')`,
+      backgroundImage: `url('images/background01.png')`,
       backgroundPosition: 'center center',
       backgroundRepeat: 'no-repeat',
       backgroundAttachment: 'fixed',

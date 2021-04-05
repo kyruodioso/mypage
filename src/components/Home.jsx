@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme)=>({
     textAlign:'center',
   },
   container:{
-    backgroundImage: `url('images/dark-background.jpg')`,
+    backgroundImage: `url('images/dark-background.png')`,
     backgroundPosition: 'center center',
     backgroundRepeat: 'no-repeat',
     backgroundAttachment: 'fixed',
@@ -64,7 +64,7 @@ const Home = () => {
 
 
 const classes=useStyles();
-const imagePerfil='images/perfil.jpg'
+const imagePerfil='images/perfil.png'
 const imagenMongo='images/mongodb.png'
 const imagenNode='images/node.png'
 const imagenReact= 'images/react.png'

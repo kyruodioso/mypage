@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "1em"
   },
   container: {
-    backgroundImage: `url('images/javascript-background.jpg')`,
+    backgroundImage: `url('images/javascript-background.png')`,
     backgroundPosition: 'center center',
     backgroundRepeat: 'no-repeat',
     backgroundAttachment: 'fixed',

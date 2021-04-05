@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
       color:"#fff"
     },
     container:{
-      backgroundImage: `url('images/bruno-thethe.jpg')`,
+      backgroundImage: `url('images/bruno-thethe.png')`,
       backgroundPosition: 'center center',
       backgroundRepeat: 'no-repeat',
       backgroundAttachment: 'fixed',
