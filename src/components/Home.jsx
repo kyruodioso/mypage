@@ -1,5 +1,5 @@
-import React from 'react'
-import {makeStyles} from '@material-ui/core/styles'
+import React from 'react';
+import {makeStyles} from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Typewriter from 'typewriter-effect';
 import Fade from 'react-reveal/Fade';
@@ -52,8 +52,7 @@ const useStyles = makeStyles((theme)=>({
   },
    imagenMern:{
     borderRadius:"100px",
-    maxWidth:"20%",
-    maxHeight:"20em",
+    maxWidth:"10em",
    boxShadow:'5px 5px 15px 0px rgba(0,0,0,0.55)',
    margin:'0.2em'
    },
