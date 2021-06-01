@@ -36,6 +36,13 @@ const useStyles = makeStyles((theme) => ({
     },
     titleTech:{
       color:'#16d857'
+    },
+    image:{
+     width:'75px'
+    },
+    gridListTile:{
+      width:'75px',
+      height:'75px'
     }
 }
 ))
