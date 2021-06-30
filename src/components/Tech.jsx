@@ -37,7 +37,8 @@ const useStyles = makeStyles((theme) => ({
       color:'#16d857'
     },
     image:{
-     width:'75px'
+     width:'75px',
+     height:'75px'
     },
     gridListTile:{
       width:'75px',
