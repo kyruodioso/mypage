@@ -42,7 +42,6 @@ const useStyles = makeStyles((theme) => ({
     },
     gridListTile:{
       width:'75px',
-      height:'75px'
     }
 }
 ))
