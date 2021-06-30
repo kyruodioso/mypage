@@ -37,12 +37,14 @@ const useStyles = makeStyles((theme) => ({
       color:'#16d857'
     },
     image:{
-     width:'75px',
-     height:'75px'
+     width:'100px',
+     height:'100px'
     },
     gridListTile:{
       width:'75px',
-    }
+      height: '80px'
+    },
+
 }
 ))
 
@@ -73,7 +75,7 @@ const Tech = () => {
             <Container>
         <Typography className ={classes.title} variant="h3">Technologies</Typography>
 
-      <GridList cellHeight={180}  cols={4}>
+      <GridList cellHeight={130}  cols={3} className={classes.gridList}>
   
                     {postData && postData.map((tech, index) => (
             
