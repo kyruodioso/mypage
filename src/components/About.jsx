@@ -21,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: `url('images/javascript-background.png')`,
     backgroundPosition: 'center center',
     backgroundRepeat: 'no-repeat',
-    backgroundAttachment: 'fixed',
     backgroundSize: 'cover',
     backgroundColor: '#66999',
     minHeight: '100vh',

@@ -15,8 +15,7 @@ const useStyles = makeStyles((theme)=>({
   container:{
     backgroundImage: `url('images/dark-background.png')`,
     backgroundPosition: 'center center',
-    backgroundRepeat: 'no-repeat',
-    backgroundAttachment: 'fixed',
+    backgroundRepeat: 'no repeat',
     backgroundSize: 'cover',
     backgroundColor: '#66999',
     minHeight:'100vh',
@@ -34,7 +33,7 @@ const useStyles = makeStyles((theme)=>({
     justifyContent: 'center',
     alignItems:'center',
     display:'flex',
-    marginBottom: '4em'
+    marginBottom: '2em'
     
   },
   textWriter:{
@@ -52,7 +51,7 @@ const useStyles = makeStyles((theme)=>({
   },
    imagenMern:{
     borderRadius:"100px",
-    maxWidth:"10em",
+    maxWidth:"100%",
    boxShadow:'5px 5px 15px 0px rgba(0,0,0,0.55)',
    margin:'0.2em'
    },
@@ -64,10 +63,8 @@ const Home = () => {
 
 const classes=useStyles();
 const imagePerfil='images/perfil.png'
-const imagenMongo='images/mongodb.png'
-const imagenNode='images/node.png'
-const imagenReact= 'images/react.png'
-const imagenExpress='images/express.png'
+
+const imagenDeveloper='images/developer.png'
 
   
     return (
@@ -91,10 +88,8 @@ const imagenExpress='images/express.png'
            </main>
            <div className="stack">
            <Flip left cascade duration={3500} className={classes.flip}>
-             <img className={classes.imagenMern} src={imagenMongo} alt="imagen de prueba" />
-             <img className={classes.imagenMern} src={imagenExpress} alt="imagen de prueba" />
-             <img className={classes.imagenMern} src={imagenReact} alt="imagen de prueba" />
-             <img className={classes.imagenMern} src={imagenNode} alt="imagen de prueba" />
+             <img className={classes.imagenMern} src={imagenDeveloper} alt="imagen de prueba" />
+   
 
            </Flip>
            </div>

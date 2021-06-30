@@ -20,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
     container: {
       backgroundPosition: 'center center',
       backgroundRepeat: 'no-repeat',
-      backgroundAttachment: 'fixed',
       backgroundSize: 'cover',
       backgroundColor: '#66999',
       minHeight: '100vh',
